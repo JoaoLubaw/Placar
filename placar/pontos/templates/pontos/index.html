@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contagem de Placar</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+  </head>
+  <body>
+    <h1>Contagem de Placar</h1>
+    <h2 class="PontosMark">{{ total_joao }} vs {{ total_benja }}</h2>
+    <div class="Divisao">
+      <div class="lado">
+        <h2>João</h2>
+        <ul class="PontosList">
+          {% for ponto in pontos_joao %}
+          <li>{{ ponto.title }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="lado">
+        <h2>Benja</h2>
+        <ul class="PontosList">
+          {% for ponto in pontos_benja %}
+          <li>{{ ponto.title }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
